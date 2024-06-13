@@ -41,8 +41,8 @@ INSTALLED_APPS = [
 
     'django.contrib.sites',
     'django.contrib.flatpages',
-    'ckeditor',
-    'ckeditor_uploader',
+    #'ckeditor',
+    #'ckeditor_uploader',
 
      'allauth',
     'allauth.account',
@@ -232,7 +232,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 SITE_URL = 'http://127.0.0.1.8000'
 
-ACCOUNT_FORMS = {'signup':'GameBoard.forms.CommonSignupForm'}
+ACCOUNT_FORMS = {'signup': 'Bullboard.forms.CommonSignupForm'}
 
 APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
 APSCHEDULER_RUN_NOW_TIMEOUT = 25
