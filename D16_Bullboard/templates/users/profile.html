@@ -1,0 +1,11 @@
+{% extends 'flatpages/default.html' %}
+
+{% block content %}
+<title>127.0.0.1:8000/users/profile/</title>
+<div class="text center mt-4 name" style="...">
+    <h3> Страница авторизованного пользователя</h3>
+</div>
+<p>
+    <a href="{% url 'account_logout' %}">Выйти</a>
+</p>
+{% endblock %}

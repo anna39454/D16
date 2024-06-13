@@ -1,0 +1,10 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Comment
+{% endblock title %}
+
+{% block content %}
+<h2>Комментарии: {{post.title}}</h2>
+<h3>{{ comments.text }}</h3>
+{% endblock content %}
