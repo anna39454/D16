@@ -42,6 +42,7 @@ class PostDelete(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('post_list')
 
 
+
 class CommentCreate(LoginRequiredMixin, CreateView):
     raise_exception = True
     form_class = CommentForms
