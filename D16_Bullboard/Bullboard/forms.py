@@ -16,7 +16,9 @@ class PostForms(forms.ModelForm):
 class CommentForms(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = '__all__'
+        #fields = '__all__'
+        fields = ['author', 'post', 'text']
+        labels = {'author': 'Автор', 'post': 'Объявление', 'text': 'Содержание'}
 
 
 class CommonSignupForms(SignupForm):
