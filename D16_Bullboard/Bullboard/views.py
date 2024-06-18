@@ -48,7 +48,7 @@ class CommentCreate(LoginRequiredMixin, CreateView):
     form_class = CommentForms
     model = Comment
     ordering = '-created'
-    template_name = 'comment.html'
+    template_name = 'comment_create.html'
     context_object_name = 'comment'
 
 

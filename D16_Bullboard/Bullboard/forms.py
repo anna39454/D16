@@ -18,7 +18,7 @@ class CommentForms(forms.ModelForm):
         model = Comment
         #fields = '__all__'
         fields = ['author', 'post', 'text']
-        labels = {'author': 'Автор', 'post': 'Объявление', 'text': 'Содержание'}
+        labels = {'author': 'Автор', 'post': 'Коментарий', 'text': 'Содержание коментария'}
 
 
 class CommonSignupForms(SignupForm):
