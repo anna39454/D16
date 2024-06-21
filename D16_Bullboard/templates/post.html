@@ -5,8 +5,32 @@
 Posts
 {% endblock title %}
 
-<!-- В контенте на странице мы выводим все объявления -->
+
 {% block content %}
-<h1>Все объявления</h1>
-{{ posts }}
+{% if post %}
+<table width="100%" style="margin-top: 35px">
+    <tr>
+        <td><u>Дата создания</u></td>
+        <td><u>Автор</u></td>
+        <td><u>Категория Объявления</u></td>
+        <td><u>Заголовок объявления</u></td>
+        <td><u>Объявление</u></td>
+        <td><u>Вложения</u></td>
+
+    </tr>
+    <tr>
+        <td>{{ post.created }}</td>
+        <td>{{ post.author }}</td>
+        <td>{{ post.category }}</td>
+        <td>{{ post.text|safe }}</td>
+        <td>{% if post.upload %}
+            <p><img class="img-post-left" src="{{post.upload.url}}"></p>
+            {% endif %}
+        </td>
+    </tr>
+</table>
+{% else %}
+<h3>"Пока объявлений  нет""</h3>
+{% endif %}
 {% endblock content %}
+

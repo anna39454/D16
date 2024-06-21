@@ -11,11 +11,12 @@ class User(AbstractUser):
 
 
 class Post(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=255)
-    text = models.TextField()
-    created = models.DateTimeField(auto_now_add=True)
-    category = models.ForeignKey('Category', on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)# Автор
+    title = models.CharField(max_length=255)# Заголовок объявления
+    text = models.TextField()# Текст объявления
+    created = models.DateTimeField(auto_now_add=True)# Дата создания
+    category = models.ForeignKey('Category', on_delete=models.CASCADE)# Категория
+    upload = models.FileField(upload_to='uploads/%Y/%m/%d/', blank=True, default=None, null=True, verbose_name='upload')# Вложения
 
     def __str__(self):
         return self.title
@@ -46,6 +47,9 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+    def get_absolute_url(self):
+        return reverse_lazy('comment_detail', kwargs={'pk': self.pk})
 
 
 
