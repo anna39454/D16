@@ -1,3 +1,4 @@
+from django.forms import ModelForm
 from allauth.account.forms import SignupForm
 from string import hexdigits
 import random
@@ -17,7 +18,7 @@ class CommentForms(forms.ModelForm):
     class Meta:
         model = Comment
         #fields = '__all__'
-        fields = ['author', 'post', 'text']
+        fields = ['text']
         labels = {'author': 'Автор', 'post': 'Коментарий', 'text': 'Содержание коментария'}
 
 
@@ -35,3 +36,4 @@ class CommonSignupForms(SignupForm):
             recipient_list=[user.email],
         )
         return user
+

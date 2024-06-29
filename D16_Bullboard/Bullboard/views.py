@@ -21,6 +21,23 @@ class PostDetail(LoginRequiredMixin, DetailView):
     template_name = 'post_detail.html'
     context_object_name = 'post'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['replay_form'] = CommentForms()
+        return context
+
+    #Добавление метода с формой отклика на страницу
+    def post(self, request):
+        post = self.get_object()
+        form = CommentForms(request.POST)
+        if form.is_valid():
+            replay = form.save(commit=False)
+            replay.post = post
+            replay.replay_author = request.user
+            replay.seve()
+            return redirect('post_detail', pk=post.pk)
+
+
 
 class PostCreate(LoginRequiredMixin, CreateView):
     raise_exception = True
