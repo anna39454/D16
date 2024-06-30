@@ -27,14 +27,14 @@ class PostDetail(LoginRequiredMixin, DetailView):
         return context
 
     #Добавление метода с формой отклика на страницу
-    def post(self, request):
+    def post(self, request, *args, **kwargs):
         post = self.get_object()
         form = CommentForms(request.POST)
         if form.is_valid():
             replay = form.save(commit=False)
             replay.post = post
             replay.replay_author = request.user
-            replay.seve()
+            replay.save()
             return redirect('post_detail', pk=post.pk)
 
 

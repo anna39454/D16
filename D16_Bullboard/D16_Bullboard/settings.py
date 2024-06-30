@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     #'ckeditor',
     #'ckeditor_uploader',
 
-     'allauth',
+    'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.yandex',
@@ -229,6 +229,12 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+DEFAULT_FROM_EMAIL = 'support@yoursite.ru'
+EMAIL_HOST = 'smtp.yoursmtpserver.ru'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = "user"
+EMAIL_HOST_PASSWORD = "pass"
 
 SITE_URL = 'http://127.0.0.1.8000'
 
