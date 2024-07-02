@@ -11,8 +11,8 @@ Comment
 <h3>{{ post.text }}</h3>
 
 {% if user.is_authenticated %}
-<h1>Добавить отклик</h1>
-    <hr>
+<h4>Добавить отклик</h4>
+   
     <form method="post" style="...">
           {% csrf_token %}
             <div style="...">
@@ -25,11 +25,11 @@ Comment
     <a  class="btn btn_primary", href="{% url 'profile' %}">Войти</a>
 {% endif %}
 
-{% if post.replay_set.all %}
-    {% for reply in post.replay_set.all %}
+{% if post.Comment_set.all %}
+    {% for reply in post.comment_set.all %}
     <div style="margin-top: 10px">
     <h4>Все отклики</h4>
-    <p>Автор: {{ reply.replay_author}} Текст отклика  {{ reply.text}}</p>
+    <p>Автор: {{ reply.comment_author}} Текст отклика  {{ comment.text}}</p>
     </div>
     {% endfor %}
 {% endif %}

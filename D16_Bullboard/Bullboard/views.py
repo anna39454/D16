@@ -33,7 +33,7 @@ class PostDetail(LoginRequiredMixin, DetailView):
         if form.is_valid():
             replay = form.save(commit=False)
             replay.post = post
-            replay.replay_author = request.user
+            replay.author = request.user
             replay.save()
             return redirect('post_detail', pk=post.pk)
 
