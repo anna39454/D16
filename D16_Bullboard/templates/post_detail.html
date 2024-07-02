@@ -25,7 +25,7 @@ Comment
     <a  class="btn btn_primary", href="{% url 'profile' %}">Войти</a>
 {% endif %}
 
-{% if post.Comment_set.all %}
+{% if post.сomment_set.all %}
     {% for reply in post.comment_set.all %}
     <div style="margin-top: 10px">
     <h4>Все отклики</h4>
