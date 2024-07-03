@@ -25,12 +25,13 @@ Comment
     <a  class="btn btn_primary", href="{% url 'profile' %}">Войти</a>
 {% endif %}
 
-{% if post.сomment_set.all %}
+{% if post.comment_set.all %}
+<h4>Все отклики</h4>
     {% for reply in post.comment_set.all %}
-    <div style="margin-top: 10px">
-    <h4>Все отклики</h4>
-    <p>Автор: {{ reply.comment_author}} Текст отклика  {{ comment.text}}</p>
-    </div>
+        <div style="margin-top: 10px">
+
+            <p> Автор: {{ reply.author}}   Текст отклика:{{ reply.text}}</p>
+        </div>
     {% endfor %}
 {% endif %}
 

@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from .models import *
 from .forms import PostForms, CommentForms
+from .forms import SignUpForm
 
 class PostList(ListView):
 
@@ -105,3 +106,10 @@ class ConfirmUser(UpdateView):
 
 class ProfileView(LoginRequiredMixin, UpdateView):
     template_name = 'users/profile.html'
+
+
+class SignUp(CreateView):
+    model = User
+    form_class = SignUpForm
+    success_url = '/accounts/login'
+    template_name = 'registration/signup.html'

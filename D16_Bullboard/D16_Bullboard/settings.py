@@ -221,7 +221,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 LOGIN_URL = 'account_login'
-LOGIN_REDIRECT_URL = 'profile'
+LOGIN_REDIRECT_URL = '/board/post'
 LOGOUT_REDIRECT_URL = 'account_login'
 
 ACCOUNT_EMAIL_REQUIRED = True
